@@ -1,11 +1,13 @@
 import React from 'react'
 
 const Header = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+            <header>
+                <h1>BLOGS CONTEXT BY NIKSHAY</h1>
+            </header>
+        </div>
+    )
 }
 
 export default Header
