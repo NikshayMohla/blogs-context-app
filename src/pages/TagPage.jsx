@@ -1,29 +1,33 @@
 import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
-import { useLocation, useNavigation } from 'react-router-dom'
-import Blogs from '../components/Blogs';
 import Pagination from '../components/Pagination';
+import Blogs from '../components/Blogs';
+
 
 const TagPage = () => {
-    const navigation = useNavigation();
+
+    const navigation = useNavigate();
     const location = useLocation();
     const tag = location.pathname.split("/").at(-1);
-    return (
+  return (
+    <div>
+        <Header/>
         <div>
-            <Header />
-            <div>
-                <button onClick={() => navigation(-1)} >
-                    Back
-                </button>
-                <h2>
-                    Blogs Tagged<span>#{tag}</span>
-                </h2>
-            </div>
-
-            <Blogs />
-            <Pagination />
+            <button 
+            onClick={() => navigation(-1)}
+            >
+                back
+            </button>
+            <h2>
+                Blogs Tagged <span>#{tag}</span>
+            </h2>
         </div>
-    )
+        <Blogs/>
+        <Pagination/>
+      
+    </div>
+  )
 }
 
 export default TagPage
